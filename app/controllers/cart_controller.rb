@@ -40,5 +40,3 @@ class CartController < ApplicationController
     return new_cart
   end
 end
-
-Cart.joins(cart_products: :product).sum('COALESCE(products.price * cart_products.qty, 0.0)')
